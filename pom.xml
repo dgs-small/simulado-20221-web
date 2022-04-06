@@ -23,11 +23,13 @@
 		  <artifactId>tomcat-embed-core</artifactId>
 		  <version>${tomcat.version}</version>
 	    </dependency>
+
 	    <dependency>
 		  <groupId>org.apache.tomcat</groupId>
 		  <artifactId>tomcat-jasper</artifactId>
 		  <version>${tomcat.version}</version>
 	    </dependency>
+
 	    <!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
 		<dependency>
 		    <groupId>org.glassfish.web</groupId>

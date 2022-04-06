@@ -12,7 +12,7 @@
 <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">LOGIN</h1>
     <div class="col-lg-6 mx-auto">
-    	   	<form method="post" action="./login" >
+    	   	<form method="post" action="./login">
       <div class="lead mb-4" >
 	   		<div class="form-floating mb-3">
 			  <input type="text" class="form-control" name="login" id="login" placeholder="login">
