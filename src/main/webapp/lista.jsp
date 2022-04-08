@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Lista</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -21,7 +21,7 @@
 		<c:forEach items="${lista}" var="usuario">
 			<p>${usuario.getLogin() }</p>
 		</c:forEach>
-
+		<a class="btn btn-primary btn-lg px-4 gap-3" href="/cadastro.jsp">Cadastrar um Novo Usuário</a>
 	</div>
 	</div>
 
