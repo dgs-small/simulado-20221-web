@@ -13,10 +13,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/lista")
 public class UsuarioListController extends HttpServlet {
+	
+	private final UsuarioDAO banco = new UsuarioDAO();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		UsuarioDAO banco = new UsuarioDAO();
+		
 		List<Usuario> lista = banco.findAll();
 		
 		req.setAttribute("lista", lista);

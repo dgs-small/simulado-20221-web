@@ -14,16 +14,18 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
 
+	private final UsuarioDAO banco = new UsuarioDAO();
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String login = req.getParameter("login");
 		String senha = req.getParameter("senha");
-
-		UsuarioDAO banco = new UsuarioDAO();
+		
 		Usuario user = banco.findByLogin(login);
 
 		if (user != null && user.getSenha().equals(senha)) {
+			req.getSession().setAttribute("usuario", login);
 			resp.sendRedirect("/lista");
 		} else {
 			resp.sendRedirect("/login.jsp");

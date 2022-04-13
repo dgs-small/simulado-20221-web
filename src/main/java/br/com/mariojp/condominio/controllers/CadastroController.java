@@ -12,20 +12,21 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/cadastro")
 public class CadastroController extends HttpServlet {
+	
+	private final UsuarioDAO banco = new UsuarioDAO();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String login = req.getParameter("login");
 		String senha = req.getParameter("senha");
 
-		UsuarioDAO banco = new UsuarioDAO();
 		Usuario user = new Usuario(login, senha);
 
 		if (banco.findByLogin(login) != null) {
-			resp.getWriter().write("<html><body><p>Usuário já existe</p></body</html>");
-		} else {
 			banco.save(user);
-			resp.getWriter().write("<html><body><p>Usuário " + login + " cadastrado com sucesso</p></body</html>");
+			req.setAttribute("sucessoCadastro", "Usuário " + login +" cadastrado com sucesso");
+			req.getRequestDispatcher("/lista").forward(req, resp);
 		}
+		
 	}
 }

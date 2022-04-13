@@ -17,10 +17,15 @@
 <body>
 	<div class="px-4 py-5 my-5 text-center">
 		<h1 class="display-5 fw-bold">LISTA DE USUARIOS</h1>
-
+		
+		<c:if test="${not empty sucessoCadastro }">
+			<h2>${sucessoCadastro}</h2>
+		</c:if>
+		
 		<c:forEach items="${lista}" var="usuario">
 			<p>${usuario.getLogin() }</p>
 		</c:forEach>
+		
 		<a class="btn btn-primary btn-lg px-4 gap-3" href="/cadastro.jsp">Cadastrar um Novo Usuário</a>
 	</div>
 	</div>
