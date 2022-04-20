@@ -3,20 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Cadastro de Usuário</title>
-<link
+	<meta charset="UTF-8">
+	<title>Cadastro de Usuário</title>
+	<link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-
+	
 </head>
 <body>
 	<div class="px-4 py-5 my-5 text-center">
 		<h1 class="display-5 fw-bold">CADASTRO</h1>
 		<div class="col-lg-6 mx-auto">
-			<form method="post" action="./cadastro">
+			<form method="post" action="/cadastro">
 				<div class="lead mb-4">
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" name="login" id="login"

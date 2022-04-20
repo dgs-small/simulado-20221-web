@@ -16,10 +16,11 @@
 </head>
 <body>
 	<div class="px-4 py-5 my-5 text-center">
+	<a href="/logout">Logout</a>
 		<h1 class="display-5 fw-bold">LISTA DE USUARIOS</h1>
 		
-		<c:if test="${not empty sucessoCadastro }">
-			<h2>${sucessoCadastro}</h2>
+		<c:if test="${not empty usuarioCriado }">
+			<h3>Usuário ${usuarioCriado.getLogin()} cadastrado recentemente</h2>
 		</c:if>
 		
 		<c:forEach items="${lista}" var="usuario">
@@ -27,6 +28,8 @@
 		</c:forEach>
 		
 		<a class="btn btn-primary btn-lg px-4 gap-3" href="/cadastro.jsp">Cadastrar um Novo Usuário</a>
+		
+		
 	</div>
 	</div>
 

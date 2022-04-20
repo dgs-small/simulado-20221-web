@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/cadastro")
 public class CadastroController extends HttpServlet {
 	
-	private final UsuarioDAO banco = new UsuarioDAO();
+	private final UsuarioDAO BANCO = new UsuarioDAO();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,10 +22,10 @@ public class CadastroController extends HttpServlet {
 
 		Usuario user = new Usuario(login, senha);
 
-		if (banco.findByLogin(login) != null) {
-			banco.save(user);
-			req.setAttribute("sucessoCadastro", "Usuário " + login +" cadastrado com sucesso");
-			req.getRequestDispatcher("/lista").forward(req, resp);
+		if (BANCO.findByLogin(login) == null) {
+			BANCO.save(user);
+			req.getSession().setAttribute("usuarioCriado", user);
+			resp.sendRedirect("lista");
 		}
 		
 	}

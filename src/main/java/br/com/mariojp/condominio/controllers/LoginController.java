@@ -31,18 +31,6 @@ public class LoginController extends HttpServlet {
 			resp.sendRedirect("/login.jsp");
 		}
 
-//		//Pode apagar esse codigo
-//		PrintWriter writer = resp.getWriter();
-//        writer.println("<html><title>Etapa 1</title><body>");
-//        writer.println("<h1>BOA SORTE!</h1>");
-//        writer.println("<p>Os parametros passados foram:</p>");
-//        writer.println("<p>login:"+login+"</p>");
-//        writer.println("<p>senha:"+senha+"</p>");
-//
-//        writer.println("<p>Existe um usuario pré-cadastrado: login: root/ senha: 1234</p>");
-//        writer.println("<p>Use o UsuarioDAO e o metodo findByLogin para autenticar o usuario. </p>");
-//
-//        writer.println("</body></html>");
 	}
 
 }
